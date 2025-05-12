@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Тест по кибербезопасности</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    function checkTest() {
+      let points = 0;
+      const correct = ["a1", "b2", "c3", "d2", "e1"];
+      for (let i = 0; i < correct.length; i++) {
+        if (document.getElementById(correct[i]).checked) {
+          points++;
+        }
+      }
+      const result = document.getElementById("result");
+      if (points === 5) {
+        result.textContent = "Отлично! Ты хорошо знаешь правила безопасности.";
+      } else if (points >= 3) {
+        result.textContent = "Хорошо! Но стоит немного подтянуть знания.";
+      } else {
+        result.textContent = "Нужно внимательнее изучить тему. Не переживай, у тебя получится!";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header><h1>Тест по кибербезопасности</h1></header>
+  <main>
+    <form>
+      <p>1. Какой пароль считается надёжным?</p>
+      <label><input type="radio" id="a1" name="q1"> Сложный, с цифрами и символами</label><br>
+      <label><input type="radio" name="q1"> 123456</label><br>
+
+      <p>2. Что делать, если тебе пришло странное письмо со ссылкой?</p>
+      <label><input type="radio" name="q2"> Перейти и ввести свои данные</label><br>
+      <label><input type="radio" id="b2" name="q2"> Не открывать и удалить</label><br>
+
+      <p>3. Кибербуллинг — это:</p>
+      <label><input type="radio" name="q3"> Реклама в интернете</label><br>
+      <label><input type="radio" id="c3" name="q3"> Оскорбления и травля онлайн</label><br>
+
+      <p>4. Какой сайт безопасен?</p>
+      <label><input type="radio" name="q4"> http://site.com</label><br>
+      <label><input type="radio" id="d2" name="q4"> https://site.com</label><br>
+
+      <p>5. Что делать, если тебя взломали?</p>
+      <label><input type="radio" id="e1" name="q5"> Сменить пароль, сообщить взрослым</label><br>
+      <label><input type="radio" name="q5"> Игнорировать</label><br>
+
+      <br>
+      <button type="button" onclick="checkTest()">Проверить</button>
+    </form>
+    <p id="result" style="font-weight: bold;"></p>
+  </main>
+</body>
+</html>
